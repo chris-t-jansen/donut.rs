@@ -1,9 +1,6 @@
 #![allow(non_snake_case)]
 
-use std::{
-    thread::sleep,
-    time::Duration,
-};
+use std::{thread::sleep, time::Duration};
 
 fn rotate(multiplier: i32, shift: i32, x: &mut i32, y: &mut i32) {
     let mut temp: i32 = *x;
@@ -15,7 +12,7 @@ fn rotate(multiplier: i32, shift: i32, x: &mut i32, y: &mut i32) {
 }
 
 const BUFFER_SIZE: usize = 1760;
-const LUMINANCE_CHARS: [char; 12] = [ '.', ',', '-', '~', ':', ';', '=', '!', '*', '#', '$', '@' ];
+const LUMINANCE_CHARS: [char; 12] = ['.', ',', '-', '~', ':', ';', '=', '!', '*', '#', '$', '@'];
 
 fn main() {
     let mut buffer: [char; BUFFER_SIZE];
@@ -54,13 +51,19 @@ fn main() {
                 let x: i32 = 40 + 30 * (cos_B * x1 - sin_B * x4) / x6;
                 let y: i32 = 12 + 15 * (cos_B * x4 + sin_A * x1) / x6;
 
-                let luminance_index: i32 = (-1 * cos_A * x7 - cos_B * ((-1 * sin_A * x7 >> 10) + x2) - cos_i * (cos_j * sin_B >> 10) >> 10) - x5 >> 7;
+                let luminance_index: i32 = (-1 * cos_A * x7
+                    - cos_B * ((-1 * sin_A * x7 >> 10) + x2)
+                    - cos_i * (cos_j * sin_B >> 10)
+                    >> 10)
+                    - x5
+                    >> 7;
                 let luminance_index: usize = usize::try_from(luminance_index).unwrap_or(0);
 
-                // let o: usize = usize::try_from(x + 80 * y).expect("Couldn't convert o to usize!");
-                let o: usize = (x as usize) + ((y as isize).wrapping_mul(80) as usize) % BUFFER_SIZE;
+                let o: usize =
+                    (x as usize) + ((y as isize).wrapping_mul(80) as usize) % BUFFER_SIZE;
 
-                let zz: i8 = i8::try_from((x6 - distance_constant_k2) >> 15).expect("Couldn't convert zz to i8!");
+                let zz: i8 = i8::try_from((x6 - distance_constant_k2) >> 15)
+                    .expect("Couldn't convert zz to i8!");
 
                 if 22 > y && y > 0 && x > 0 && 80 > x && zz < z_buffer[o] {
                     z_buffer[o] = zz;
@@ -74,7 +77,7 @@ fn main() {
         for k in 0..1761 {
             match k % 80 {
                 0 => print!("\n"),
-                1.. => print!("{}", buffer[k])
+                1.. => print!("{}", buffer[k]),
             }
         }
 
