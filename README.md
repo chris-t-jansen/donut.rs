@@ -79,3 +79,19 @@ Throughout the code I tried to use more accessible variable names where possible
 #### Functional Changes
 
 The only real functional change in this implementation from the original is a change in the time between frames. The original code calls `usleep(15000)` to sleep the thread for 15,000 microseconds (15 milliseconds) and have the animation run at a consistent framerate. I chose to bump this delay up to 35 milliseconds, which causes the program to run closer to 24 frames a second, which I felt looked better. It's a totally subjective choice, so you may find that you disagree with me on what delay looks best.
+
+
+## License
+
+I am unaware of any licenses on the original `donut.c` code. Therefore, since I firmly believe that choosing **any** license is better than having no license at all, I have chosen to follow much of the Rust community and license this work under the dual MIT / Apache-2.0 license. If it comes to my attention that the original work is licensed in some way, I'll reevaluate this section and update it as appropriate.
+
+Licensed under either of
+
+ * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+ * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+
+at your option.
+
+## Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
