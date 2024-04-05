@@ -1,6 +1,6 @@
 # `donut.rs`
 
-This is a simple reimplementation of Andy Sloane's (@a1k0n) famous `donut.c` program by me for learning purposes. The code in this repository is specifically based on the code from the post ["donut.c without a math library"](https://www.a1k0n.net/2021/01/13/optimizing-donut.html), published January 13, 2021.
+This is a simple reimplementation of Andy Sloane's ([@a1k0n](https://github.com/a1k0n)) famous `donut.c` program by me for learning purposes. The code in this repository is specifically based on the code from the post ["donut.c without a math library"](https://www.a1k0n.net/2021/01/13/optimizing-donut.html), published January 13, 2021.
 
 For the original 2006 version of `donut.c`, see ["Have a donut."](https://www.a1k0n.net/2006/09/15/obfuscated-c-donut.html) For the 2011 revision of `donut.c` and author's explanation of the theory behind the code, see ["Donut math: how donut.c works"](https://www.a1k0n.net/2011/07/20/donut-math.html).
 
