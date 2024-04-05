@@ -60,9 +60,9 @@ b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
 ```
 However, because we know that `luminance_index` will be `0` if it was originally negative, the above comparison and inlined default value of `0` are unecessary, allowing for the following:
 ```rust
-buffer[o] = LUMINANCE_CHARS[luminance_index];
+buffer[o] = ['.', ',', '-', '~', ':', ';', '=', '!', '*', '#', '$', '@'][luminance_index];
 ```
-Since string types in Rust are not accessible by index, the `LUMINANCE_CHARS` here is a `const` array that contains the same 12 characters in the same order.
+Since string types in Rust are not accessible by index, the array here allows the characters to be accessed by index in the same way as the original code.
 
 The second and more difficult of the `usize` conversions is for the `o` variable. This line caused numerous errors while I was testing the code, and I tried multiple different ways of converting it to no avail. As I'm still a newbie to Rust, I eventually turned to A.I. to help me solve the problem (specifically, the *Claude 3 Sonnet* model from [Anthropic](https://www.anthropic.com/)). After some back-and-forth and a couple failed iterations, it produced the following code:
 ```rust
